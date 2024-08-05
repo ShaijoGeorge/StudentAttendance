@@ -1,0 +1,54 @@
+{% extends 'admin/adminindex.html'%}
+{%block body%}
+
+    <!-- main body here-->
+
+    <div class="main-body">
+      <div class="div2">
+            <form class="tutorAssign-form" id="tutorAssignForm">
+                <h2>Tutor Assign</h2>
+                <div class="department">
+                    <label for="department">Department:</label>
+                    <select name="department" id="departmentSelect">
+                        <option disabled selected>--select department--</option>
+                        <option value="option1">Option 1</option>
+                        <option value="option2">Option 2</option>
+                    </select>
+                </div>
+                <div class="staff">
+                    <label for="Staff">Staff:</label>
+                    <select name="Staff" id="staffSelect" disabled>
+                        <option disabled selected>--select staff--</option>
+                        <!-- Options will be dynamically added here -->
+                    </select>
+                </div>
+           <div class="semester">
+              <label for="Semester">Semester:</label>
+              <select name="Semester" id="">
+                 <option disabled selected>--select semester --</option>
+                 <option value="">Semester1</option>
+                 <option value="">Semester2</option>
+                 <option value="">Semester3</option>
+              </select>
+           </div>
+           <div class="division">
+              <label for="Division">Division:</label>
+              <select name="Division" id="">
+                 <option disabled selected>--select division--</option>
+                 <option value="">Division1</option>
+                 <option value="">Division2</option>
+                 <option value="">Division3</option>
+              </select><br>
+           </div>
+            <button type="submit" class="tutorAssign-button">Assign</button>
+        </form>
+   </div> 
+    </div>
+      
+
+
+
+
+
+</body>
+{%endblock%}

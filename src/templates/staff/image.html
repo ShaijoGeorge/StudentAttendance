@@ -1,0 +1,38 @@
+{% extends 'staff/staffindex.html'%}
+{%block body%}
+          
+    <!-- main body here-->
+
+    <div class="main-body">
+      <div class="student-body">
+            <div class="profile-card">
+                 <div class="profile-cnt">
+                       <div class="contnt">
+                             <div class="image">
+                                   <img src="./static/staffphoto/{{i}}" alt="">
+                             </div>
+                             <form action="/updatestaffprofiles" class="profile-form" method="post" enctype="multipart/form-data">
+                                   <table>
+                                         <tr>
+                                               <td><label for="">Image:</label></td>
+                                               <td><input type="file" name="files"> </td></tr>
+
+
+
+
+                                   </table>
+                                   <button class="profile-edit">Edit profile</button>
+                             </form>
+                       </div>
+                 </div>
+            </div>
+    </div> 
+
+</div>
+
+
+
+
+     <script src="script.js"></script>
+</body>
+{%endblock%}

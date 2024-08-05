@@ -1,0 +1,52 @@
+
+{% extends 'staff/staffindex.html'%}
+{%block body%}
+
+          
+    <!-- main body here-->
+
+    <div class="main-body">
+      <table id="Table">
+        <div class="table-head" style="margin-top: 10px;">
+            <h2>Leave requests</h2>
+        </div>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Reason</th>
+                <th>date</th>
+                <th>days</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    {%for i in val%}
+            <tr>
+
+                <td>{{i[0]}}</td>
+                <td>{{i[1]}}</td>
+                <td>{{i[2]}}<br>Semester:{{i[3]}}<br>
+                Division:{{i[4]}}</td>
+                <td>{{i[8]}}</td>
+                <td>{{i[10]}}</td>
+                <td>{{i[9]}}</td>
+                <td>
+                    {%if i[11]=="rejected"%}Reject {%endif%}
+                                        {%if i[11]=="accepted"%}Accepted {%endif%}
+                    {% if i[11]=="pending"%}
+                  <a href="/leaveaccepted?id={{i[5]}}" class="edit" >Accept</a>
+                  <a href="/leaverejected?id={{i[5]}}" class="delete">Reject</a>
+                    {%endif%}
+                </td>
+            </tr>
+        {%endfor%}
+           
+ 
+        </tbody>
+    </table>
+    </div>
+    
+
+{%endblock%}

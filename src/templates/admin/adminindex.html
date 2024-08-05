@@ -1,0 +1,65 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Font Awesome icons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cute+Font&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Exo+2:ital,wght@0,300;1,200;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+ <!-- custome css -->
+ <link rel="stylesheet" href="./static/adminstyle/style.css">
+ <link rel="stylesheet" href="./static/adminstyle/style2.css">
+
+</head>
+<body>
+      <div class="headbar">
+            <img src="./static/adminstyle/img1.png" alt="logo">
+            <h1>FaceTrace</h1>
+      </div>
+            <!-- Topbar -->
+
+
+   <div class="navbar">
+        <div class="navbar-toggler">&#9776;</div>
+        <ul>
+            <li><a href="/viewstaff">Staff</a></li>
+            <li><a href="/viewstudent">Students</a></li>
+            <li><a href="/viewsubject">Subject </a></li>
+            <li><a href="/addtimtable">TimeTable</a></li>
+            <!--<li><a href="staff-assign-view.html">Staff Assign</a></li>-->
+            <li><a href="/logout">Logout  <i class="fas fa-sign-out-alt"></i></a></li>
+        </ul>
+   </div>
+
+    <!-- main body here-->
+
+    <div class="main-body">
+
+
+{%block body%}
+{%endblock%}
+        <!-- for home page -->
+        <!--<div class="body">-->
+          <!--<img class="body-img" src="img2.jpg" width="800px" height="520px">-->
+          <!--<div class="body-cnt">-->
+            <!--<div class="cnt">-->
+                <!--<h1 class="body-h1">“Education is the most powerful weapon <br> which you can use to change the world.” </h1>-->
+                <!--<h6 class="body-h6">—Nelson Mandela</h6>-->
+            <!--</div>-->
+          <!--</div>-->
+       <!--</div>-->
+
+    </div>
+
+
+
+
+
+     <script src="./static/adminstyle/script.js"></script>
+</body>
+</html>

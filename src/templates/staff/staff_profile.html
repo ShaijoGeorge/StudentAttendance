@@ -1,0 +1,75 @@
+{% extends 'staff/staffindex.html'%}
+{%block body%}
+          
+    <!-- main body here-->
+
+    <div class="main-body">
+      <div class="student-body">
+            <div class="profile-card">
+                 <div class="profile-cnt">
+                       <div class="contnt">
+                             <div class="image">
+                                   <img src="./static/staffphoto/{{i[9]}}" alt="">
+                             </div>
+                             <form action="/updatestaffprofile" class="profile-form" method="post" enctype="multipart/form-data">
+                                   <table>
+                                         <tr>
+                                               <td><label for="">Image:</label></td>
+                                               <td><a href="/changeimg?id={{i[9]}}">change image</a> </td></tr>
+
+                                         <tr>
+                                               <td><label for="">Staff Id:</label></td>
+                                               <td><input name="text2" type="text"  value="{{i[3]}}"></td>
+                                         </tr>
+
+                                         <tr>
+                                               <td><label for="">Name:</label></td>
+                                               <td><input type="text" name="text1"  value="{{i[2]}}"></td>
+                                         </tr>
+                                         <tr>
+                                               <td><label for="">Department:</label></td>
+                                               <td>  <select name="select" id="f">
+
+              <option {% if i[8]=="CSE"%} SELECTED {%endif%}>CSE</option>
+              <option {% if i[8]=="EEE"%} SELECTED {%endif%}>EEE</option>
+              <option {% if i[8]=="ECE"%} SELECTED {%endif%} >ECE</option>
+                              <option {% if i[8]=="AD"%} SELECTED {%endif%}  >AD</option>
+              <option {% if i[8]=="RE"%} SELECTED {%endif%}>RE</option>
+              <option {% if i[8]=="MR"%} SELECTED {%endif%}>MR</option>
+              <option {% if i[8]=="ME"%} SELECTED {%endif%}>ME</option>
+
+            </select></td>
+                                         </tr>
+                                         <tr>
+                                               <td><label for="">Address</label></td>
+                                               <td><textarea name="text3" id="" cols="30" rows="4">{{i[4]}}</textarea></td>
+                                         </tr>
+                                         <tr>
+                                               <td><label for="">email:</label></td>
+                                               <td><input type="email" value="{{i[6]}}" name="text5"></td>
+                                         </tr>
+                                         <tr>
+                                               <td><label for="">mobile</label></td>
+                                               <td><input name="text4" type="number"  length="10" value="{{i[5]}}"></td>
+                                         </tr>
+                                         <tr>
+                                          <td><label for="">Qualification</label></td>
+                                          <td><input type="text" name="text6" value="{{i[7]}}" ></td>
+
+                                    </tr>
+                                   </table>
+                                   <button class="profile-edit">Edit profile</button>
+                             </form>
+                       </div>
+                 </div>
+            </div>
+    </div> 
+
+</div>
+
+
+
+
+     <script src="script.js"></script>
+</body>
+{%endblock%}

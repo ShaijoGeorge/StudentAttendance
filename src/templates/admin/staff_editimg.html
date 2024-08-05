@@ -1,0 +1,32 @@
+{% extends 'admin/adminindex.html'%}
+{%block body%}
+
+    <!-- main body here-->
+
+    <div class="main-body">
+      <div class="form-div" style="background-color: #044eae; padding: 30px; background-attachment: scroll;">
+            <!-- main body here-->
+            <form class="staff-form" style="margin: auto;" method="post" action="/updatestaffprofiless" enctype="multipart/form-data">
+
+
+         
+                    <label for="photo">Photo:</label>
+                <input type="file" name="files">
+               <img src="./static/staffphoto/{{i}}" height="100" width="100">
+               
+                <br>
+                                <br>
+
+         
+                    <button type="submit" class>Update</button>
+                </form>
+         </div>
+    </div>
+      
+
+
+
+
+
+</body>
+{%endblock%}

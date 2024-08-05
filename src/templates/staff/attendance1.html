@@ -1,0 +1,49 @@
+
+{% extends 'staff/staffindex.html'%}
+{%block body%}
+
+
+    <!-- main body here-->
+
+    <!-- studentlist -->
+    <div class="main-div">
+      <!-- filter form -->
+     <form action="/staffupdateattendances" method="post" class="attendance">
+
+
+
+
+     <!-- attendance display table -->
+      <table class="display-tbl">
+        <div class="attendance-head">
+          <h2 class="attendance-h2">Attendance(Edit attendance 0 for absent 1 for present)</h2>
+          <input type="submit" name="submit" value="update" class="update">
+                    </div>
+
+        <tr>
+          <th>Registration Number</th>
+          <th>Attendance</th>
+        </tr>
+        <!-- data here -->
+          {%for i in val%}
+        <tr>
+          <td>{{i[2]}}
+                    <input type="text" name="sid" value="{{i[3]}} " hidden>
+</td>
+          <td>
+              <!--<input type="text" value=" {%if i[0]==1 %} Present {%endif%}{%if i[0]==0 %} Absent {%endif%}">-->
+              <input type="number" name="att" value="{{i[0]}}">
+
+          </td>
+        </tr>
+          {%endfor%}
+
+
+
+      </table>
+     </form>
+    </div>
+    
+   
+  </body>
+{%endblock%}

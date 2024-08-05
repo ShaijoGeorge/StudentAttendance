@@ -1,0 +1,48 @@
+
+{% extends 'staff/staffindex.html'%}
+{%block body%}
+          
+    <!-- main body here-->
+     <div class="main-div">
+      <!-- filter form -->
+
+
+
+     <!-- attendance display table -->
+      <table class="display-tbl">
+        <div class="attendance-head">
+          <h2 class="attendance-h2">Absenties in Subject</h2></div>
+
+        <tr>
+             <th>Department</th>
+            <th>Semester</th>
+          <th>Subject Code</th>
+            <th>Subject</th>
+            <th></th>
+
+
+
+        </tr>
+        <!-- data here -->
+          {%for i in s%}
+        <tr>
+             <td>{{i[0][3]}}</td>
+            <td>{{i[0][4]}}</td>
+          <td>{{i[0][2]}}</td>
+          <td>{{i[0][1]}}</td>
+            <td><a href="/att?id={{i[0][0]}}">view more</a> </td>
+
+        </tr>
+          {%endfor%}
+
+
+
+      </table>
+     </form>
+    </div>
+    
+
+
+</body>
+
+{%endblock%}

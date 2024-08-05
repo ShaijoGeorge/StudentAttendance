@@ -1,0 +1,114 @@
+{% extends 'admin/adminindex.html'%}
+{%block body%}
+
+    <!-- main body here-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <div class="main-body">
+      <form action="/viewtimtables" class="attendance" style="width: 70%; margin: auto; margin-top: 50px;" method="post">
+            <div class="filter-input">
+              
+                  <label for="Semester">Department:
+
+                                     <select id="select" name="select">
+                        <option disabled selected>--Department--</option>
+              <option >CSE</option>
+              <option >EEE</option>
+              <option  >ECE</option>
+                              <option   >AD</option>
+              <option
+              >RE</option>
+              <option >MR</option>
+              <option >ME</option>
+                        </select>
+
+                      </label>
+              
+              <label for="Semester">Semester:
+                  <select name="Semester" id="">
+                        <option disabled selected>--select semester --</option>
+                         <option >1</option>
+              <option>2</option>
+              <option>3</option>
+                              <option>4</option>
+              <option >5</option>
+              <option >6</option>
+              <option >7</option>
+                      <option >8</option>
+                     </select>
+              </label>
+              <input type="submit" value="Search" class="submit">
+            </div>
+      </form>
+
+      <table style="width: 50%; margin: auto;margin-top: 20px;">
+            <thead>
+                  <tr>
+                        <th>Subject Code</th>
+                        <th>Subject</th>
+                        <th>Hour</th>
+                  </tr>
+            </thead>
+            <tbody>
+                {%for i in val%}
+            <tr>
+                <td>{{i[2]}}</td>
+                <td>{{i[3]}}</td>
+                <td>{{i[1]}}</td>
+
+
+
+                <td>
+                     <!--<a href="/editstaff?lid={{i[1]}}" class="edit"><span class="material-symbols-outlined">edit</span></a>-->
+                  <a href="/deletetimetable?lid={{i[0]}}" class="delete"><span class="material-symbols-outlined">delete</span></a>
+                </td>
+
+            </tr>
+        {%endfor%}
+            </tbody>
+      </table>
+
+      <button class="submit btnadd" style="width: 100px;" ><a href="addtimtable" style="color:white;"> Create Timetable</a></button>
+
+    </div>
+
+<script>
+
+$(document).ready(function(){
+
+    $("select#select").change(function() {
+
+
+        if ($(this).val() != 'default') {
+
+            var br = $('#select option:selected').val();
+
+
+
+
+            $.ajax({
+                type: 'POST',
+                url: "/getsubject",
+                data: { sem: br },
+
+                success: function(response) {
+                var opt = '';
+    for (var i=0, l=response.length; i<l; i=i+2)
+    {
+        opt+='<option value="'+response[i]+'">'+response[i+1]+'</option>';
+
+}
+
+ $('select#select2').html('').prop('disabled',false)
+    $('select#select2').append(opt);
+                }
+            });
+        }
+        else {
+            $('select#select2').html('').prop('disabled',true);
+        }
+    });
+});
+</script>
+</body>
+{%endblock%}

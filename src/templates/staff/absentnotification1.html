@@ -1,0 +1,59 @@
+
+{% extends 'staff/staffindex.html'%}
+{%block body%}
+
+
+    <!-- main body here-->
+
+    <!-- studentlist -->
+    <div class="main-div">
+      <!-- filter form -->
+
+
+
+     <!-- attendance display table -->
+      <table class="display-tbl">
+        <div class="attendance-head">
+          <h2 class="attendance-h2">Absent</h2>
+       </div>
+
+        <tr>
+          <th>Reg No</th>
+            <th>Student Name</th>
+                        <th>Quardian Details</th>
+
+            <th>Date Of Absent</th>
+                        <th>Department Details</th>
+
+
+        </tr>
+        <!-- data here -->
+          {%for i in val%}
+        <tr>
+          <td>{{i[4]}}</td>
+          <td>{{i[3]}}</td>
+            <td>{{i[5]}}<br>
+                <i>{{i[6]}}</i>
+                <!--<button class="card__button" onclick="openWhatsApp()">-->
+                    <!--<input type="hidden" id="num" value="{{i[9]}}">-->
+                  <!--<img src="./static/pp.png" alt="WhatsApp" width="20" height="20">-->
+
+                <!--</button>-->
+
+            </td>
+            <td><a href="/viewdates?id={{i[7]}}">view dates</a> </td>
+            <td>{{i[0]}} {{i[1]}}sem {{i[2]}}division</td>
+
+        </tr>
+          {%endfor%}
+
+
+
+      </table>
+     </form>
+    </div>
+
+
+  </body>
+
+{%endblock%}

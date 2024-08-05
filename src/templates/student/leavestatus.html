@@ -1,0 +1,83 @@
+
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Student home</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+      <link rel="stylesheet" href="./static/studentstyle/student-style.css">
+</head>
+<body>
+      <div class="navbar">
+            <h1>FaceTrace</h1>
+            <h4>jyothi engineering college</h4>
+      </div>
+     
+      <div class="studentbasemain">
+          <div class="student-body">
+
+                 <div class="Attendance-report">
+                  <div class="h3">
+                        <h3>timeTable</h3>
+                        <button class="back"><a href="/studenthome"><i class="fa-solid fa-home fa-2x"></i></a></button>
+                  </div>
+                  <!-- <form action="" class="student-timetable" >
+                        <div class="filter-input">
+                          
+                              <label for="Semester">Department:
+                                    <select id="firstDropdown">
+                                      <option disabled selected>--Select department--</option>
+                                      <option value="option1">Department 1</option>
+                                      <option value="option2">Department 2</option>
+                                      <option value="option3">Department 3</option>
+                                    </select>
+                              </label>     
+                          
+                          <label for="Semester">Semester:
+                              <select name="Semester" id="">
+                                    <option disabled selected>--select semester --</option>
+                                    <option value="">Semester1</option>
+                                    <option value="">Semester2</option>
+                                    <option value="">Semester3</option>
+                                 </select>
+                          </label>
+                          <input type="submit" value="Search" class="submit tabl">
+                        </div>
+                  </form> -->
+            
+                  <table border="1" align="center"class="Attendance-rpt">
+                        <thead >
+                              <tr>
+                                    <th>Date</th>
+                                    <th>Leave</th>
+                                    <th>Days</th>
+                                    <th>Status</th>
+                                  <th></th>
+                              </tr>
+                        </thead>
+                        <tbody>
+                              <tr>
+                                    {%for i in val%}
+                                    <td>{{i[5]}}</td>
+                                  <td>{{i[3]}}</td>
+
+                                    <td>{{i[4]}}</td>
+                                    <td>{{i[6]}}</td>
+                                  <td><a href="/editlv?id={{i[0]}}">Edit</a><br>
+                                  <a href="/dellv?id={{i[0]}}">Delete</a></td>
+                              </tr>
+                             {%endfor%}
+
+                        </tbody>
+                  </table>
+                     
+
+                    </table>
+  
+                  </div>
+         </div>
+      </div>
+
+        
+</body>
+</html>

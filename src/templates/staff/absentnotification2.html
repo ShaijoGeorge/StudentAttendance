@@ -1,0 +1,51 @@
+
+{% extends 'staff/staffindex.html'%}
+{%block body%}
+
+
+    <!-- main body here-->
+
+    <!-- studentlist -->
+    <div class="main-div">
+      <!-- filter form -->
+
+
+<br>
+</div>
+<form action="/datecheck" method="post">
+     <!-- attendance display table -->
+      <table class="display-tbl">
+        <div class="attendance-head">
+          <h2 class="attendance-h2">Absent</h2>
+                    <div align="right">        <input type="submit" class="btn btn-primary" value="checked">
+
+       </div>
+
+        <tr>
+          <th>Date</th>
+
+
+
+
+        </tr>
+        <!-- data here -->
+          {%for i in v%}
+        <tr>
+          <td>{{i[0]}} <input type="text" value="{{i[1]}}" name="id"></td>
+
+
+
+        </tr>
+          {%endfor%}
+
+
+
+      </table>
+
+     </form>
+    </div>
+
+
+  </body>
+
+{%endblock%}

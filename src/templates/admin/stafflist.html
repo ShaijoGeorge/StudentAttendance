@@ -1,0 +1,89 @@
+{% extends 'admin/adminindex.html'%}
+{%block body%}
+
+    <!-- main body here-->
+    <div class="main-div">
+
+     <form action="/deptsearch" class="attendance" method="post">
+
+        <div class="filter-input">
+
+
+
+
+
+
+          <label>Department:
+            <select name="select" id="f">
+              <option disabled selected>--Department--</option>
+              <option {% if dept=="CSE"%} SELECTED {%endif%}>CSE</option>
+              <option {% if dept=="EEE"%} SELECTED {%endif%}>EEE</option>
+              <option {% if dept=="ECE"%} SELECTED {%endif%} >ECE</option>
+                              <option {% if dept=="AD"%} SELECTED {%endif%}  >AD</option>
+              <option {% if dept=="RE"%} SELECTED {%endif%}>RE</option>
+              <option {% if dept=="MR"%} SELECTED {%endif%}>MR</option>
+              <option {% if dept=="ME"%} SELECTED {%endif%}>ME</option>
+
+            </select>
+          </label>
+
+          <input type="submit" value="search" class="submit">
+        </div>
+     </form>
+        </div>
+    <div class="main-body">
+      <table id="Table">
+            <div class="table-head" style="margin-top: 10px;">
+                <h2>Staff details</h2>
+                <button class="add-student-btn"><a href="/addstaff" class="btn"><i class="fas fa-user-plus"></i> Add New Staff</a></button>
+            </div>
+            <thead>
+                <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Staff Code</th>
+                <th>Address</th>
+                <th>Department</th>
+                <th>Phone</th>
+                <th>Emailid</th>
+                <th>Qualification</th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                               {%for i in val%}
+
+                <td><img src="./static/staffphoto/{{i[9]}}" width="150" height="150" alt=""></td>
+                <td>{{i[2]}}</td>
+                <td>{{i[3]}}</td>
+                <td>{{i[4]}}</td>
+                <td>{{i[8]}}</td>
+                <td>{{i[5]}}</td>
+                <td>{{i[6]}}</td>
+                <td>{{i[7]}}</td>
+
+                <td>
+
+                            <a href="/editstaff?lid={{i[1]}}" class="edit"><span class="material-symbols-outlined">edit</span></a>
+                </td>
+                <td>
+                                      <a href="/deletestaff?lid={{i[1]}}" class="delete"><span class="material-symbols-outlined">delete</span></a>
+
+                </td>
+
+            </tr>
+        {%endfor%}
+
+            </tbody>
+        </table>
+    </div>
+      
+
+
+
+
+
+</body>
+{%endblock%}

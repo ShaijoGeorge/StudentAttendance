@@ -1,0 +1,68 @@
+{% extends 'admin/adminindex.html'%}
+{%block body%}
+
+    <!-- main body here-->
+
+    <div class="main-body">
+      <form action="" class="attendance" style="width: 70%; margin: auto; margin-top: 50px;">
+            <div class="filter-input">
+              
+                  <label for="Semester">Department:
+                        <select id="firstDropdown">
+                          <option disabled selected>--Select department--</option>
+                          <option value="option1">Department 1</option>
+                          <option value="option2">Department 2</option>
+                          <option value="option3">Department 3</option>
+                        </select>
+                      </label>     
+              
+              <label for="Semester">Semester:
+                  <select name="Semester" id="">
+                        <option disabled selected>--select semester --</option>
+                        <option value="">Semester1</option>
+                        <option value="">Semester2</option>
+                        <option value="">Semester3</option>
+                     </select>
+              </label>
+              <input type="submit" value="Search" class="submit">
+            </div>
+      </form>
+
+      <table style="width: 50%; margin: auto;margin-top: 20px;">
+            <thead>
+                  <tr>
+                        <th>Subject Code</th>
+                        <th>Subject</th>
+                        <th>Hour</th>
+                  </tr>
+            </thead>
+            <tbody>
+                  <tr>
+                        <td>001</td>
+                        <td>English</td>
+                        <td>1</td>
+                  </tr>
+                  <tr>
+                        <td>001</td>
+                        <td>English</td>
+                        <td>1</td>
+                  </tr>
+                  <tr>
+                        <td>001</td>
+                        <td>English</td>
+                        <td>1</td>
+                  </tr>
+            </tbody>
+      </table>
+
+      <button class="submit btnadd" style="width: 100px;" ><a href="Addtimetable.html"> Create Timetable</a></button>
+   
+    </div>
+      
+
+
+
+
+
+</body>
+{%endblock%}

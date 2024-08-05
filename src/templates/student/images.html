@@ -1,0 +1,170 @@
+
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <!--<title>Image Gallery</title>-->
+    <!--<style>-->
+        <!--body {-->
+            <!--font-family: Arial, sans-serif;-->
+            <!--margin: 0;-->
+            <!--padding: 0;-->
+            <!--background-color: #f4f4f4;-->
+        <!--}-->
+
+        <!--h1 {-->
+            <!--text-align: center;-->
+            <!--color: #333;-->
+        <!--}-->
+
+        <!--.gallery {-->
+            <!--display: grid;-->
+            <!--grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));-->
+            <!--gap: 20px;-->
+            <!--padding: 60px;-->
+        <!--}-->
+
+        <!--.gallery img {-->
+            <!--width: 100%;-->
+            <!--height: auto;-->
+            <!--border-radius: 8px;-->
+            <!--box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);-->
+            <!--transition: transform 0.3s ease-in-out;-->
+            <!--cursor: pointer;-->
+        <!--}-->
+
+        <!--.gallery img:hover {-->
+            <!--transform: scale(1.05);-->
+        <!--}-->
+    <!--</style>-->
+<!--</head>-->
+<!--<body>-->
+    <!--<h1>Image Gallery</h1>-->
+
+    <!--<div class="gallery">-->
+            <!--{%for i in val%}-->
+        <!--&lt;!&ndash; add images here &ndash;&gt;-->
+        <!--<img src="./static/training-data/s{{id}}/{{i[2]}}" alt="">-->
+        <!--&lt;!&ndash;<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTExtoLVhMIfPRj_8d5RQKF2qjwUbuYL2tZTg&s" alt="">&ndash;&gt;-->
+        <!--&lt;!&ndash;<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTExtoLVhMIfPRj_8d5RQKF2qjwUbuYL2tZTg&s" alt="">&ndash;&gt;-->
+        <!--&lt;!&ndash;<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTExtoLVhMIfPRj_8d5RQKF2qjwUbuYL2tZTg&s" alt="">&ndash;&gt;-->
+        <!--&lt;!&ndash;<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTExtoLVhMIfPRj_8d5RQKF2qjwUbuYL2tZTg&s" alt="">&ndash;&gt;-->
+        <!--&lt;!&ndash;<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTExtoLVhMIfPRj_8d5RQKF2qjwUbuYL2tZTg&s" alt="">&ndash;&gt;-->
+
+<!--{%endfor%}-->
+    <!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+
+        /--gallery--/
+
+.gallery .heading{
+    color: #414040;
+    text-shadow: 6px 6px 2px #3c3b3bb4;
+    font-size: 2.5rem;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 1rem;
+    padding-bottom: 1.8rem;
+    text-align: center;
+
+}
+
+
+
+.gallery .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+     padding: 60px;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.gallery .box-container .box{
+    height: 15rem;
+    width: 16rem;
+    margin: 0.7rem;
+    border-radius: 20px;
+    cursor:pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery .box-container .box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    border-radius: 20px;
+}
+
+.gallery .box-container .box .icons{
+    position: absolute;
+    top:120%; left: 0;
+    background: linear-gradient(transparent, #0a0a0a);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+    transition: .2s linear;
+}
+
+.gallery .box-container .box:hover .icons{
+    opacity:1;
+    top: 0;
+}
+
+.gallery .box-container .box .icons button{
+    background-color: transparent;
+    text-shadow: 0 .1rem .3rem #000;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    border: none;
+}
+.gallery .box-container .box .icons button a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.gallery .box-container .box .icons button a:hover{
+    color: #f10202;
+}
+
+    </style>
+</head>
+<body>
+                           <button class="back"><a href="studenthome"><i class="fa-solid fa-home fa-2x"></i></a></button>
+
+    <div class="gallery">
+        <h1 class="heading">Gallery</h1>
+        <div class="box-container">
+
+            {%for i in val%}
+
+            <!--image loop starts here-->
+            <div class="box">
+                <img src="./static/training-data/s{{id}}/{{i[2]}}" alt="">
+                <div class="icons">
+                    <button><a href="/delimg?id={{i[2]}}"><i class="fas fa-trash"></i></a></button>
+                </div>
+            </div>
+
+
+{%endfor%}
+        </div>
+    </div>
+
+</body>
+</html>

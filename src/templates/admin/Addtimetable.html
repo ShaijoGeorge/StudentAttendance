@@ -1,0 +1,58 @@
+
+{% extends 'admin/adminindex.html'%}
+{%block body%}
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- main body here-->
+    <div class="main-body">
+      <form action="/addtimetable" class="attendance" style="width: 70%; margin: auto; margin-top: 50px;" method="post">
+
+            <div class="filter-input">
+              
+                  <label for="Semester">Department:
+                        <select id="select" name="select">
+                        <option disabled selected>--Department--</option>
+              <option >CSE</option>
+              <option >EEE</option>
+              <option  >ECE</option>
+                              <option   >AD</option>
+              <option
+              >RE</option>
+              <option >MR</option>
+              <option >ME</option>
+                        </select>
+                      </label>     
+
+<p>
+    <label for="Semester">Semester:
+                  <select name="Semester" id="select2">
+                            <option disabled selected>--Semester--</option>
+
+              <option >1</option>
+              <option>2</option>
+              <option>3</option>
+                              <option>4</option>
+              <option >5</option>
+              <option >6</option>
+              <option >7</option>
+                      <option >8</option>
+
+                        </select>
+              </label>
+</p>
+
+
+    
+              <input type="submit" value="submit" class="submit">
+            </div> 
+         </form>  
+    </div>
+      
+
+
+
+
+
+</body>
+
+{%endblock%}

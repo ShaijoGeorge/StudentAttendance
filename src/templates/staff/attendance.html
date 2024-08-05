@@ -1,0 +1,93 @@
+
+{% extends 'staff/staffindex.html'%}
+{%block body%}
+          
+    <!-- main body here-->
+
+    <div class="main-div">
+      <!-- filter form -->
+     <form action="/staffviewattendances" method="post" class="attendance">
+
+
+        <div class="filter-input">
+
+
+
+
+          <label for="Semester">Semester:
+            <select name="sem" id="">
+              <option disabled selected>--Semester--</option>
+              <option value="1" {% if sem=="1" %} selected{% endif%}>Semester1</option>
+              <option value="2" {% if sem=="2" %} selected{% endif%}>Semester2</option>
+              <option value="3" {% if sem=="3" %} selected{% endif%}>Semester3</option>
+                <option value="4" {% if sem=="4" %} selected{% endif%}>Semester4</option>
+              <option value="5" {% if sem=="5" %} selected{% endif%}>Semester5</option>
+              <option value="6" {% if sem=="6" %} selected{% endif%}>Semester6</option>
+              <option value="7" {% if sem=="7" %} selected{% endif%}>Semester7</option>
+              <option value="8" {% if sem=="8" %} selected{% endif%}>Semester8</option>
+
+            </select>
+          </label>
+
+          <label for="Division">Division:
+            <select name="divi" id="">
+              <option disabled selected>--division--</option>
+              <option value="A" {% if divi=="A" %} selected{% endif%}>A</option>
+              <option value="B"{% if divi=="B" %} selected{% endif%}>B</option>
+              <option value="C"{% if divi=="C" %} selected{% endif%}>C</option>
+            </select>
+          </label><br>
+
+          <label for="date">date:
+            <input type="date" name="date" id="" value="{{date}}">
+          </label>
+          <label for="Hour">Hour:
+            <select name="hour" id="">
+              <option disabled selected>--Hour--</option>
+              <option value="1" {% if hour=="1" %} selected{% endif%}>1</option>
+              <option value="2" {% if hour=="2" %} selected{% endif%}>2</option>
+              <option value="3"{% if hour=="3" %} selected{% endif%}>3</option>
+                              <option value="4"{% if hour=="4" %} selected{% endif%}>4</option>
+              <option value="5" {% if hour=="5" %} selected{% endif%}>5</option>
+              <option value="6"{% if hour=="6" %} selected{% endif%}>6</option>
+              <option value="7"{% if hour=="7" %} selected{% endif%}>7</option>
+
+            </select>
+          </label>
+
+          <input type="submit" name="submit" value="view" class="submit">
+        </div>
+
+     <!-- attendance display table -->
+      <table class="display-tbl">
+        <div class="attendance-head">
+          <h2 class="attendance-h2">Attendance</h2>
+  {% if len!=0%}
+          <input type="submit" name="submit" value="update" class="update">
+            {%endif%}        </div>
+
+        <tr>
+          <th>Registration Number</th>
+          <th>Attendance</th>
+        </tr>
+        <!-- data here -->
+          {%for i in val%}
+        <tr>
+          <td>{{i[2]}} </td>
+          <td>
+              <input type="text" readonly value=" {%if i[0]==1 %} Present {%endif%}{%if i[0]==0 %} Absent {%endif%}">
+              <!--<input type="number" name="att" value="{{i[0]}}">-->
+
+          </td>
+        </tr>
+          {%endfor%}
+
+
+
+      </table>
+     </form>
+    </div>
+    
+
+</body>
+{%endblock%}

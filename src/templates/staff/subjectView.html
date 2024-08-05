@@ -1,0 +1,59 @@
+{% extends 'staff/staffindex.html'%}
+{%block body%}
+    <!-- main body here-->
+
+    <div class="main-body">
+      <form action="/sviewsubjects" class="attendance" style="width: 50%; margin: auto;" method="post">
+
+            <div class="filter-input">
+              
+
+
+              
+              <label for="Semester">Semester:
+                <select name="select1" id="">
+                   <option disabled selected>--Semester--</option>
+
+              <option {% if sem=="1"%} SELECTED {%endif%}>1</option>
+              <option {% if sem=="2"%} SELECTED {%endif%}>2</option>
+              <option {% if sem=="3"%} SELECTED {%endif%}>3</option>
+                              <option {% if sem=="4"%} SELECTED {%endif%}>4</option>
+              <option {% if sem=="5"%} SELECTED {%endif%}>5</option>
+              <option {% if sem=="6"%} SELECTED {%endif%}>6</option>
+              <option {% if sem=="7"%} SELECTED {%endif%}>7</option>
+                                          <option {% if sem=="8"%} SELECTED {%endif%}>8</option>
+
+                </select>
+              </label>
+    
+              <input type="submit" value="view" class="submit">
+            </div> 
+         </form>
+    
+         <!-- attendance display table -->
+         <form action="/sviewtimtables" class="sub-display" style="width: 60%; margin: auto;">
+             <br>
+          <table class="display-tbl">
+    
+            <tr>
+              <th>Staff</th>
+              <th>Subject</th>
+              <th>subject code</th>
+            </tr>
+            <!-- data here -->
+                              {%for i in val%}
+
+            <tr>
+             <td>{{i[6]}}</td>
+                <td>{{i[2]}}</td>
+                <td>{{i[1]}} (CODE:{{i[7]}})</td>
+            </tr>
+            {%endfor%}
+          </table>
+         </form>
+      
+   </div>
+
+</body>
+
+{%endblock%}

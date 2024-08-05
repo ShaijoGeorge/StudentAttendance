@@ -1,0 +1,110 @@
+{% extends 'admin/adminindex.html'%}
+{%block body%}
+
+    <!-- main body here-->
+
+    <div class="main-body">
+      <div class="form-div" style="background-color: #044eae; padding: 30px; background-attachment: scroll;">
+            <!-- main body here-->
+            <form class="staff-form" style="margin: auto;" method="post" action="/updatestudent" enctype="multipart/form-data">
+                    <h2>Staff Update</h2>
+
+                    <label for="tcode">Register No:</label>
+                    <input type="text"  name="text2" required value="{{i[3]}}" >
+
+                     <div class="inputdiv">
+                       <div class="divb">
+                         <label for="name">Name:</label>
+                         <input type="text"  name="text1" required value="{{i[2]}}">
+                       </div>
+
+                       <!--<div class="divb">-->
+                         <!--<label for="Username">Username:</label>-->
+                         <!--<input type="text" name="uname" required>-->
+                       <!--</div>-->
+                     </div>
+
+                    <label for="address">Address:</label>
+                    <input type="text"  name="text3" required value="{{i[4]}}">
+
+                     <div class="inputdiv">
+                       <div class="divb">
+                         <label for="phone">Phone:</label>
+                         <input type="text"  name="text4" required value="{{i[5]}}">
+                       </div>
+
+                       <div class="divb">
+                         <label for="email">Email:</label>
+                         <input type="email" name="text5" required value="{{i[6]}}">
+                       </div>
+                     </div>
+
+                     <div class="inputdiv">
+                       <div class="divb">
+                         <label for="qulification">Dob:</label>
+                         <input type="date"  name="text6" required value="{{i[7]}}">
+                       </div>
+
+
+                       <div class="divb">
+                         <label for="department">Department:</label>
+                         <select name="select" id="">
+                         <option disabled selected>--Department--</option>
+              <option {% if i[8]=="CSE"%} SELECTED {%endif%}>CSE</option>
+              <option {% if i[8]=="EEE"%} SELECTED {%endif%}>EEE</option>
+              <option {% if i[8]=="ECE"%} SELECTED {%endif%} >ECE</option>
+                              <option {% if i[8]=="AD"%} SELECTED {%endif%}  >AD</option>
+              <option {% if i[8]=="RE"%} SELECTED {%endif%}>RE</option>
+              <option {% if i[8]=="MR"%} SELECTED {%endif%}>MR</option>
+              <option {% if i[8]=="ME"%} SELECTED {%endif%}>ME</option>
+                         </select>
+                       </div>
+                         <div class="divb">
+                             <label for="rfid">Semester:</label>
+                                  <select name="select1" id="f">
+
+              <option {% if i[9]==1%} SELECTED {%endif%}>1</option>
+              <option {% if i[9]==2%} SELECTED {%endif%}>2</option>
+              <option {% if i[9]==3%} SELECTED {%endif%} >3</option>
+                              <option {% if i[9]==4%} SELECTED {%endif%}  >4</option>
+              <option {% if i[9]==5%} SELECTED {%endif%}>5</option>
+              <option {% if i[9]==6%} SELECTED {%endif%}>6</option>
+              <option {% if i[9]==7%} SELECTED {%endif%}>7</option>
+                                          <option {% if i[9]==8%} SELECTED {%endif%}>8</option>
+
+
+            </select>
+                         </div>
+                         <div class="divb">
+                              <label for="rfid">Division:</label>
+                             <select name="select3">
+            <option {% if i[10]=="A"%} selected {%endif%}>A</option>
+                                     <option {% if i[10]=="B"%} selected {%endif%}>B</option>
+            <option {% if i[10]=="C"%} selected {%endif%}>C</option>
+
+        </select>
+                         </div>
+                     </div>
+
+                    <label for="photo">Photo:</label>
+
+                                <a href="/studentchangeimgs?id={{i[11]}}">change image</a>
+
+                <img src="./static/studentphoto/{{i[11]}}" height="100" width="100">
+
+                <br>
+                                <br>
+
+
+                    <button type="submit" class>Update</button>
+                </form>
+         </div>
+    </div>
+      
+
+
+
+
+
+</body>
+{%endblock%}

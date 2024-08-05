@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Font Awesome icons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cute+Font&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Exo+2:ital,wght@0,300;1,200;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+ <!-- custome css -->
+ <link rel="stylesheet" href="./static/staffstyle/style.css">
+ <link rel="stylesheet" href="./static/staffstyle/style2.css">
+
+</head>
+<body>
+      <div class="headbar">
+            <img src="./static/adminstyle/img1.png" alt="logo">
+            <h1>FaceTrace</h1>
+      </div>
+            <!-- Topbar -->
+      
+
+            <div class="navbar">
+              <div class="navbar-toggler">&#9776;</div>
+              <ul>
+                  <li><a href="/teacherhome">Home</a></li>
+                                    <li><a href="/takeat1">start class</a></li>
+
+                  <li><a href="/staffprofile">Profile</a></li>
+                  <li><a href="/staffviewstudent">Students</a></li>
+                  <li><a href="/staffviewattendancess">Attendance</a></li>
+                  <li>
+                      <div class="nav-link-container">
+                          {% if j==0%}
+                          <a href="absent" class="absents-link">Absents</a>
+                          {%endif%}
+                          {%if j!=0%}
+                          <a href="absent" class="absents-link">Abscents<span class="badge">{{j}}</span></a>
+                            {%endif%}
+                      </div>
+                  </li>
+                  <li>
+                    <div class="nav-link-container1">
+                        <a href="staffviewrequest" class="absents-link1">Leave Requests</a>
+                    </div>
+                </li>
+                  <li><a href="/sviewtimtable">TimeTable</a></li>
+                  <li><a href="/staffviewsubject">Subjects</a></li>
+                  <li><a href="/logout">Logout  <i class="fas fa-sign-out-alt"></i></a></li>
+              </ul>
+          </div>
+          
+    <!-- main body here-->
+
+
+
+    <div class="main-body">
+{%block body%}
+{%endblock%}
+        <!--&lt;!&ndash; for home page &ndash;&gt;-->
+        <!--<div class="body">-->
+          <!--<img class="body-img" src="./static/adminstyle/img2.jpg" width="800px" height="520px">-->
+          <!--<div class="body-cnt">-->
+            <!--<div class="cnt">-->
+                <!--<h1 class="body-h1">“Education is the most powerful weapon <br> which you can use to change the world.” </h1>-->
+                <!--<h6 class="body-h6">—Nelson Mandela</h6>-->
+            <!--</div>-->
+          <!--</div>-->
+       <!--</div>-->
+
+    <!--</div>-->
+      <!---->
+
+
+
+
+     <script src="./static/staffstyle/script.js"></script>
+</body>
+</html>

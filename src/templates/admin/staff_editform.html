@@ -1,0 +1,82 @@
+{% extends 'admin/adminindex.html'%}
+{%block body%}
+
+    <!-- main body here-->
+
+    <div class="main-body">
+      <div class="form-div" style="background-color: #044eae; padding: 30px; background-attachment: scroll;">
+            <!-- main body here-->
+            <form class="staff-form" style="margin: auto;" method="post" action="/updatestaff" enctype="multipart/form-data">
+                    <h2>Staff Update</h2>
+            
+                    <label for="tcode">Teacher Code:</label>
+                    <input type="text"  name="text2" required value="{{i[3]}}" >
+     
+                     <div class="inputdiv">
+                       <div class="divb">
+                         <label for="name">Name:</label>
+                         <input type="text"  name="text1" required value="{{i[2]}}">
+                       </div>
+     
+                       <!--<div class="divb">-->
+                         <!--<label for="Username">Username:</label>-->
+                         <!--<input type="text" name="uname" required>-->
+                       <!--</div>-->
+                     </div>
+            
+                    <label for="address">Address:</label>
+                    <input type="text"  name="text3" required value="{{i[4]}}">
+         
+                     <div class="inputdiv">
+                       <div class="divb">
+                         <label for="phone">Phone:</label>
+                         <input type="text"  name="text4" required value="{{i[5]}}">
+                       </div>
+          
+                       <div class="divb">
+                         <label for="email">Email:</label>
+                         <input type="email" name="text5" required value="{{i[6]}}">
+                       </div>
+                     </div>
+                    
+                     <div class="inputdiv">
+                       <div class="divb">
+                         <label for="qulification">Qualification:</label>
+                         <input type="text"  name="text6" required value="{{i[7]}}">
+                       </div>
+         
+                       <div class="divb">
+                         <label for="department">Department:</label>
+                         <select name="select" id="">
+                         <option disabled selected>--Department--</option>
+              <option {% if i[8]=="CSE"%} SELECTED {%endif%}>CSE</option>
+              <option {% if i[8]=="EEE"%} SELECTED {%endif%}>EEE</option>
+              <option {% if i[8]=="ECE"%} SELECTED {%endif%} >ECE</option>
+                              <option {% if i[8]=="AD"%} SELECTED {%endif%}  >AD</option>
+              <option {% if i[8]=="RE"%} SELECTED {%endif%}>RE</option>
+              <option {% if i[8]=="MR"%} SELECTED {%endif%}>MR</option>
+              <option {% if i[8]=="ME"%} SELECTED {%endif%}>ME</option>
+                         </select>
+                       </div>
+                     </div>
+         
+                    <label for="photo">Photo:</label>
+                <a href="/changeimgs?id={{i[9]}}">change image</a>
+               <img src="./static/staffphoto/{{i[9]}}" height="100" width="100">
+               
+                <br>
+                                <br>
+
+         
+                    <button type="submit" class>Update</button>
+                </form>
+         </div>
+    </div>
+      
+
+
+
+
+
+</body>
+{%endblock%}
